@@ -40,6 +40,7 @@
     "zod": "^4.1.11"
   },
   "devDependencies": {
+    "@fontsource-variable/ubuntu-sans": "^5.2.10",
     "@tanstack/eslint-config": "^0.3.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
