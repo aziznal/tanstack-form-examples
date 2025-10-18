@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { FormContainer } from '@/components/form-container';
+import { SubmitButton } from '@/components/submit-button/submit-button';
 
 const loginSchema = z.object({
   email: z.email(),
@@ -30,6 +31,8 @@ export const LoginFormExample: React.FC<{ className?: string }> = (props) => {
 
   return (
     <FormContainer>
+      <h1 className="text-2xl font-bold">Login form</h1>
+
       <form
         className={cn('space-y-2', props.className)}
         onSubmit={(e) => {
@@ -65,9 +68,9 @@ export const LoginFormExample: React.FC<{ className?: string }> = (props) => {
         <form.Subscribe
           selector={(state) => [state.canSubmit, state.isSubmitting]}
           children={([canSubmit, isSubmitting]) => (
-            <Button type="submit" disabled={!canSubmit}>
+            <SubmitButton type="submit" disabled={!canSubmit}>
               {isSubmitting ? '...' : 'Submit'}
-            </Button>
+            </SubmitButton>
           )}
         />
 

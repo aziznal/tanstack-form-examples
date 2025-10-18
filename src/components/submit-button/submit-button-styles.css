@@ -1,0 +1,79 @@
+@keyframes light-up {
+  to {
+    background-color: oklch(0.5 5 89.88 / 0.1);
+  }
+}
+
+@keyframes depress {
+  0% {
+    box-shadow: 4px 4px 0px oklch(from black calc(l + 0.4) c h);
+    transform: translate(0px, 0px);
+  }
+  50% {
+    box-shadow: 1px 1px 0px oklch(from black calc(l + 0.4) c h);
+    transform: translate(3px, 3px);
+  }
+  100% {
+    box-shadow: 4px 4px 0px oklch(from black calc(l + 0.4) c h);
+    transform: translate(0px, 0px);
+  }
+}
+
+.fancy-button {
+  box-shadow: 4px 4px 0px oklch(from black calc(l + 0.4) c h);
+
+  &.animating {
+    animation: depress var(--animation-duration)
+      linear(
+        0,
+        0.544 5.5%,
+        0.947 11.5%,
+        1.213 18.1%,
+        1.298 21.7%,
+        1.352 25.5%,
+        1.372 28.2%,
+        1.379 31.1%,
+        1.374 34.2%,
+        1.357 37.6%,
+        1.307 43.7%,
+        1.121 61.8%,
+        1.074 67.8%,
+        1.04 73.7%,
+        1.007 84.7%,
+        1
+      );
+  }
+}
+
+@keyframes disperse {
+  to {
+    transform: translate(var(--x), var(--y)) rotate(var(--rotation));
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  top: 50%;
+  left: 50%;
+
+  opacity: 50%;
+  color: greenyellow;
+  font-weight: bold;
+  font-size: 0.8rem;
+  white-space: nowrap;
+
+  user-select: none;
+  pointer-events: none;
+  animation:
+    disperse cubic-bezier(0, 0.78, 0.127, 0.976) var(--animation-duration),
+    fade-out 200ms calc(var(--animation-duration) / 2) forwards;
+}

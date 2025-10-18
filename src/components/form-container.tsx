@@ -6,6 +6,13 @@ export const FormContainer: React.FC<{
   children: ReactNode;
 }> = (props) => {
   return (
-    <div className={cn('space-y-6 border p-6 rounded-md', props.className)}>{props.children}</div>
+    <div
+      className={cn(
+        'max-w-[600px] mx-auto space-y-6 border p-6 rounded-md bg-card',
+        props.className,
+      )}
+    >
+      {props.children}
+    </div>
   );
 };
