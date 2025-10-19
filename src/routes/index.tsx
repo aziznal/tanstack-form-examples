@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { LoginFormExample } from '@/form-examples/Login';
 import { GroceriesListFormExample } from '@/form-examples/GroceriesList';
+import { SalaryFormExample } from '@/form-examples/SalaryForm';
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -12,6 +13,8 @@ function App() {
       <LoginFormExample />
 
       <GroceriesListFormExample />
+
+      <SalaryFormExample />
     </div>
   );
 }
