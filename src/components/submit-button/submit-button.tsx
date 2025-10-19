@@ -10,7 +10,6 @@ import './submit-button-styles.css';
 const ANIMATION_DURATION_MS = 300;
 const PARTICLE_DURATION = 1200;
 
-let animationTimeout: NodeJS.Timeout | null = null;
 let particleTimeout: NodeJS.Timeout | null = null;
 const particles = [] as Array<HTMLElement>;
 
@@ -22,7 +21,6 @@ export const SubmitButton: React.FC<ButtonProps> = ({
   const id = useId();
 
   const animate = () => {
-    if (animationTimeout) clearTimeout(animationTimeout);
     if (particleTimeout) clearTimeout(particleTimeout);
 
     const button = document.querySelector(
@@ -40,7 +38,7 @@ export const SubmitButton: React.FC<ButtonProps> = ({
       const particle = document.createElement('div');
       particles.push(particle);
       particle.classList.add('particle');
-      particle.innerText = 'ok'
+      particle.innerText = 'ok';
       // particle.innerText = sample(['wow', 'such form', 'much submit']);
       button.parentNode?.appendChild(particle);
 
@@ -59,9 +57,9 @@ export const SubmitButton: React.FC<ButtonProps> = ({
       );
     });
 
-    animationTimeout = setTimeout(() => {
+    setTimeout(() => {
       button.classList.remove('animating');
-    }, ANIMATION_DURATION_MS + 100);
+    }, ANIMATION_DURATION_MS);
 
     particleTimeout = setTimeout(() => {
       particles.forEach((particle) => particle.remove());
