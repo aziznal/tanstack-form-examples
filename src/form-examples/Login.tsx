@@ -4,7 +4,6 @@ import type { AnyFieldApi } from '@tanstack/react-form';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
 import { FormContainer } from '@/components/form-container';
 import { SubmitButton } from '@/components/submit-button/submit-button';
 

@@ -1,7 +1,6 @@
 import { useId } from 'react';
 import range from 'lodash.range';
 import random from 'lodash.random';
-import sample from 'lodash.sample';
 import { Button } from '../ui/button';
 import type { ButtonProps } from '../ui/button';
 import { cn } from '@/lib/utils';

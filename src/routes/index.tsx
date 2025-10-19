@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { LoginFormExample } from '@/form-examples/Login';
 import { GroceriesListFormExample } from '@/form-examples/GroceriesList';
 import { SalaryFormExample } from '@/form-examples/SalaryForm';
+import { CreditCardFormExample } from '@/form-examples/CreditCard';
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -10,6 +11,8 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <div className="p-6 space-y-24 pb-24">
+      <CreditCardFormExample />
+
       <LoginFormExample />
 
       <GroceriesListFormExample />
