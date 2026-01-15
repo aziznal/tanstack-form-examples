@@ -34,6 +34,7 @@
     "lodash.random": "^3.2.0",
     "lodash.range": "^3.2.0",
     "lucide-react": "^0.544.0",
+    "nitro": "^3.0.1-alpha.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.0.2",
